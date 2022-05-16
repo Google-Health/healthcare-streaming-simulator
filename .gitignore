@@ -1,0 +1,21 @@
+# IDE related
+.idea
+.vscode
+
+# Gradle related
+.gradle
+build
+
+# Misc
+.DS_Store
+.notes
+output
+scratch
+
+# Terraform related
+*.tfstate
+*.tfstate.backup
+.terraform/
+*.tfvars
+*.pkrvars.hcl
+*.lock.hcl
