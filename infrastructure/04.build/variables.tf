@@ -37,11 +37,13 @@ variable "full_class_name" {
 variable "github_repository_owner" {
   type        = string
   description = "Owner of the GitHub repository. For example the owner for https://github.com/example/foo is 'example'."
+  default = "google-health"
 }
 
 variable "github_repository_name" {
   type        = string
   description = "The name of the GitHub repository. For example the repository name for https://github.com/example/foo is 'foo'."
+  default = "healthcare-streaming-simulator"
 }
 
 variable "artifact_registry_id" {
