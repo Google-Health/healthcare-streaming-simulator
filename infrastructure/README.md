@@ -16,8 +16,8 @@ limitations under the License.
 
 # Overview
 
-This directory holds code to deploy infrastructure required to run the data
-engineering pipelines.
+This directory holds code to deploy infrastructure required to run the
+simulator.
 
 # Requirements
 

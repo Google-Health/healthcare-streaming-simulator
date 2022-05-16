@@ -15,6 +15,7 @@ scratch
 # Terraform related
 *.tfstate
 *.tfstate.backup
+*.tfstate.lock.info
 .terraform/
 *.tfvars
 *.pkrvars.hcl
