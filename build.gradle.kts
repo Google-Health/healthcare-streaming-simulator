@@ -41,7 +41,6 @@ val googleAuthVersion: String by project
 val googleHealthcareApiVersion: String by project
 val gsonVersion: String by project
 val guavaVersion: String by project
-val jupiterVersion: String by project
 val slf4jVersion: String by project
 val syntheaVersion: String by project
 
@@ -52,8 +51,7 @@ dependencies {
     implementation("org.mitre.synthea:synthea:$syntheaVersion")
     implementation("com.google.apis:google-api-services-healthcare:$googleHealthcareApiVersion")
     implementation("com.google.auth:google-auth-library-oauth2-http:$googleAuthVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter:$jupiterVersion")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+
     compileOnly("com.google.auto.value:auto-value-annotations:$autoValueVersion")
     annotationProcessor("com.google.auto.value:auto-value:$autoValueVersion")
 }
