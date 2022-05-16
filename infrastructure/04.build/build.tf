@@ -16,23 +16,23 @@
 resource "google_cloudbuild_trigger" "dataflow_template_build_trigger" {
   name = "simulator"
   source_to_build {
-    uri = "https://github.com/${var.github_repository_owner}/${var.github_repository_name}"
-    ref = "refs/heads/main"
+    uri       = "https://github.com/${var.github_repository_owner}/${var.github_repository_name}"
+    ref       = "refs/heads/main"
     repo_type = "GITHUB"
   }
   build {
     timeout = "1800s"
     step {
-      id         = "healthcare:simulator:build_image"
+      id   = "healthcare:simulator:build_image"
       name = "gcr.io/cloud-builders/docker"
-      args       = [
+      args = [
         "build",
         "-t",
         "${var.region}-docker.pkg.dev/${var.project}/${var.artifact_registry_id}/${var.app_name}",
         "."
       ]
     }
-    images = [
+    images  = [
       "${var.region}-docker.pkg.dev/${var.project}/${var.artifact_registry_id}/${var.app_name}",
     ]
   }

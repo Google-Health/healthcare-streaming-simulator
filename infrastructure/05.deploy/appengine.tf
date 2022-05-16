@@ -19,14 +19,14 @@ data "google_compute_network" "default" {
 
 // Query the virtual private subnetwork
 data "google_compute_subnetwork" "default" {
-  name = "simulator"
+  name   = "simulator"
   region = var.region
 }
 
 // Provision Appengine application
 resource "google_app_engine_flexible_app_version" "default" {
-  runtime = "custom"
-  service = "default"
+  runtime    = "custom"
+  service    = "default"
   version_id = "v1"
   manual_scaling {
     instances = 1
@@ -46,7 +46,7 @@ resource "google_app_engine_flexible_app_version" "default" {
   }
 
   network {
-    name = data.google_compute_network.default.name
+    name       = data.google_compute_network.default.name
     subnetwork = data.google_compute_network.default.name
   }
 
@@ -55,9 +55,9 @@ resource "google_app_engine_flexible_app_version" "default" {
   }
 
   resources {
-    cpu = var.cpu
+    cpu       = var.cpu
     memory_gb = var.memory_gb
-    disk_gb = var.disk_size_gb
+    disk_gb   = var.disk_size_gb
     volumes {
       name        = "ramdisk1"
       size_gb     = var.volume_size_gb

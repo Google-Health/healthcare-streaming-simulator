@@ -25,15 +25,15 @@ variable "artifact_registry_id" {
 }
 
 variable "cpu" {
-  type = number
+  type        = number
   description = "Number of CPU cores needed"
-  default = 4
+  default     = 4
 }
 
 variable "disk_size_gb" {
-  type = number
+  type        = number
   description = "Disk size (GB) needed"
-  default = 10
+  default     = 10
 }
 
 variable "fhirstore_dataset_id" {
@@ -49,9 +49,9 @@ variable "fhirstore_name" {
 }
 
 variable "memory_gb" {
-  type = number
+  type        = number
   description = "Memory (GB) needed"
-  default = 16
+  default     = 16
 }
 
 variable "project" {
@@ -62,11 +62,11 @@ variable "project" {
 variable "region" {
   type        = string
   description = "The Google Cloud Platform (GCP) region in which to provision resources"
-  default = "us-central1"
+  default     = "us-central1"
 }
 
 variable "volume_size_gb" {
-  type = number
+  type        = number
   description = "Volume size in gigabytes"
-  default = 1
+  default     = 1
 }

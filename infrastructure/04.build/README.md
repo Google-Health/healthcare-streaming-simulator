@@ -25,10 +25,11 @@ This module achieves the following:
 
 # Requirements
 
-- If this repository is cloned into a private repo, 
-connect GitHub repository as explained in
-[Installing the Cloud Build app](https://cloud.google.com/build/docs/automating-builds/build-repos-from-github#installing_gcb_app).
-**YOU CAN IGNORE CREATING THE TRIGGER**
+- If this repository is cloned into a private repo, connect GitHub repository as
+  explained in
+  [Installing the Cloud Build app](https://cloud.google.com/build/docs/automating-builds/build-repos-from-github#installing_gcb_app)
+  .
+  **YOU CAN IGNORE CREATING THE TRIGGER**
 
 # Usage
 
