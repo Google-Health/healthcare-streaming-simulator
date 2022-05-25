@@ -16,7 +16,13 @@ limitations under the License.
 
 # Deploy the Healthcare Streaming Simulator
 
-## Setup project
+## Select or create project
+
+Select or create a project to begin.
+
+<walkthrough-project-setup></walkthrough-project-setup>
+
+## Setup environment
 
 Run the terraform workflow in
 the [infrastructure/01.setup](infrastructure/01.setup) directory.
