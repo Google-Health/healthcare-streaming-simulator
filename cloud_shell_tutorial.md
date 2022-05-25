@@ -100,9 +100,9 @@ the Pub/Sub topic and data mirrored on the BigQuery dataset.
 
 The following are where you can find resources you just deployed:
 
-- [Pub/Sub Topic](https://console.cloud.google.com/cloudpubsub/topic/list?project=<walkthrough-project-id/>)
-- [Pub/Sub Subscription](https://console.cloud.google.com/cloudpubsub/subscription/list?project=<walkthrough-project-id/>)
-- [BigQuery dataset](https://console.cloud.google.com/bigquery?project=<walkthrough-project-id/>)
-- [FHIR Store](https://console.cloud.google.com/healthcare/browser?project=<walkthrough-project-id/>)
-- [Docker image](https://console.cloud.google.com/artifacts?project=<walkthrough-project-id/>)
-- [Appengine Instance](https://console.cloud.google.com/appengine/instances?project=<walkthrough-project-id/>)
+- [Pub/Sub Topic](https://console.cloud.google.com/cloudpubsub/topic/list)
+- [Pub/Sub Subscription](https://console.cloud.google.com/cloudpubsub/subscription/list)
+- [BigQuery dataset](https://console.cloud.google.com/bigquery)
+- [FHIR Store](https://console.cloud.google.com/healthcare/browser)
+- [Docker image](https://console.cloud.google.com/artifacts)
+- [Appengine Instance](https://console.cloud.google.com/appengine/instances)
