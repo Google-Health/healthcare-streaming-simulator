@@ -16,66 +16,23 @@ limitations under the License.
 
 # Overview
 
-This module is responsible for building the data pipeline image.
+This directory is responsible for building the data pipeline image.
 
-This module achieves the following:
+The goal is:
 
-- Builds the code into a jar file with all dependencies
+- Build the code into a jar file with all dependencies
 - Build the image and publish on Artifact Registry
 
 # Requirements
 
-- If this repository is cloned into a private repo, connect GitHub repository as
-  explained in
-  [Installing the Cloud Build app](https://cloud.google.com/build/docs/automating-builds/build-repos-from-github#installing_gcb_app)
-  .
-  **YOU CAN IGNORE CREATING THE TRIGGER**
+See [../../README.md](../../README.md) for requirements.
 
 # Usage
 
-Follow conventional terraform workflow to build this solution. You will be
-prompted for required variables. Alternatively, you may create a `vars.tfvars`
-file and apply the `-var-file=vars.tfvars` flag.
+Run the following command [at the root of this repository](../..).
 
-## Terraform init
-
-Initialize the terraform environment.
-
+```bash
+PROJECT=$(gcloud config get-value project)
+REGION=us-central1
+gcloud builds submit --tag=$REGION-docker.pkg.dev/$PROJECT/simulator/simulator
 ```
-terraform init
-```
-
-## Terraform plan
-
-Plan the terraform solution.
-
-```
-terraform plan
-```
-
-or
-
-```
-terraform plan -var-file=vars.tfvars
-```
-
-## Terraform apply
-
-Apply the terraform solution.
-
-```
-terraform apply
-```
-
-or
-
-```
-terraform apply -var-file=vars.tfvars
-```
-
-## Trigger Build
-
-Follow instructions found on
-https://cloud.google.com/build/docs/automating-builds/create-manual-triggers#running_manual_triggers
-
-to run the manual trigger created from this module.
