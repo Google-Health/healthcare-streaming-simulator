@@ -22,16 +22,21 @@ Select or create a project to begin.
 
 <walkthrough-project-setup></walkthrough-project-setup>
 
+## Set default project
+
+```sh
+gcloud config set project <walkthrough-project-id/>
+```
+
 ## Setup environment
 
 Run the terraform workflow in
 the [infrastructure/01.setup](infrastructure/01.setup) directory.
 
 ```sh
-PROJECT=$(gcloud config get-value project)
 cd infrastructure/01.setup
 terraform init
-terraform apply -var='project=$PROJECT'
+terraform apply -var='project=<walkthrough-project-id/>'
 ```
 
 ## Provision network
@@ -40,10 +45,9 @@ Run the terraform workflow in
 the [infrastructure/02.network](infrastructure/02.network) directory.
 
 ```sh
-PROJECT=$(gcloud config get-value project)
-cd infrastructure/02.network
+cd ../infrastructure/02.network
 terraform init
-terraform apply -var='project=$PROJECT'
+terraform apply -var='project=<walkthrough-project-id/>'
 ```
 
 ## Provision FHIR Store and related resources
@@ -52,10 +56,9 @@ Run the terraform workflow in
 the [infrastructure/03.sinks](infrastructure/03.sinks) directory.
 
 ```sh
-PROJECT=$(gcloud config get-value project)
-cd infrastructure/03.sinks
+cd ../infrastructure/03.sinks
 terraform init
-terraform apply -var='project=$PROJECT'
+terraform apply -var='project=<walkthrough-project-id/>'
 ```
 
 ## Build the Docker image
@@ -64,10 +67,9 @@ Run the terraform workflow in
 the [infrastructure/04.build](infrastructure/04.build) directory.
 
 ```sh
-PROJECT=$(gcloud config get-value project)
-cd infrastructure/04.build
+cd ../infrastructure/04.build
 terraform init
-terraform apply -var='project=$PROJECT'
+terraform apply -var='project=<walkthrough-project-id/>'
 ```
 
 ## Deploy the application
@@ -76,8 +78,7 @@ Run the terraform workflow in
 the [infrastructure/05.deploy](infrastructure/05.deploy) directory.
 
 ```sh
-PROJECT=$(gcloud config get-value project)
-cd infrastructure/05.deploy
+cd ../infrastructure/05.deploy
 terraform init
-terraform apply -var='project=$PROJECT'
+terraform apply -var='project=<walkthrough-project-id/>'
 ```
