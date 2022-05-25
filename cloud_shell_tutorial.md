@@ -36,7 +36,7 @@ the [infrastructure/01.setup](infrastructure/01.setup) directory.
 ```sh
 DIR=infrastructure/01.setup
 terraform -chdir=$DIR init
-terraform apply -chdir=$DIR -var='project=<walkthrough-project-id/>'
+terraform -chdir=$DIR apply-var='project=<walkthrough-project-id/>'
 ```
 
 ## 2. Provision network
@@ -47,7 +47,7 @@ the [infrastructure/02.network](infrastructure/02.network) directory.
 ```sh
 DIR=infrastructure/02.network
 terraform -chdir=$DIR init
-terraform apply -chdir=$DIR -var='project=<walkthrough-project-id/>'
+terraform -chdir=$DIR apply-var='project=<walkthrough-project-id/>'
 ```
 
 ## 3. Provision FHIR Store and related resources
@@ -58,7 +58,7 @@ the [infrastructure/03.sinks](infrastructure/03.sinks) directory.
 ```sh
 DIR=infrastructure/03.sinks
 terraform -chdir=$DIR init
-terraform apply -chdir=$DIR -var='project=<walkthrough-project-id/>'
+terraform -chdir=$DIR apply-var='project=<walkthrough-project-id/>'
 ```
 
 ## 4. Build the Docker image
@@ -69,7 +69,7 @@ the [infrastructure/04.build](infrastructure/04.build) directory.
 ```sh
 DIR=infrastructure/04.build
 terraform -chdir=$DIR init
-terraform apply -chdir=$DIR -var='project=<walkthrough-project-id/>'
+terraform -chdir=$DIR apply-var='project=<walkthrough-project-id/>'
 ```
 
 ## 5. Deploy the application
@@ -80,7 +80,7 @@ the [infrastructure/05.deploy](infrastructure/05.deploy) directory.
 ```sh
 DIR=infrastructure/05.deploy
 terraform -chdir=$DIR init
-terraform apply -chdir=$DIR -var='project=<walkthrough-project-id/>'
+terraform -chdir=$DIR apply-var='project=<walkthrough-project-id/>'
 ```
 
 ## Summary
