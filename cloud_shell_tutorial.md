@@ -72,21 +72,12 @@ terraform -chdir=$DIR apply -var='project=<walkthrough-project-id/>'
 
 ## 4. Build the Docker image
 
-Run the terraform workflow in
-the [infrastructure/04.build](infrastructure/04.build) directory.
-
-It will ask your permission before provisioning resources and you'll need to
-type `yes` to proceed.
+Run the following command to build the Docker image.
 
 ```sh
-DIR=infrastructure/04.build
-terraform -chdir=$DIR init
-terraform -chdir=$DIR apply -var='project=<walkthrough-project-id/>'
+REGION=us-central1
+gcloud builds submit --tag=$REGION-docker.pkg.dev/<walkthrough-project-id/>/simulator/simulator
 ```
-
-After successfully running, navigate to Cloud Builds and run the manual trigger.
-
-<walkthrough-menu-navigation sectionId="CLOUD_BUILD_SECTION">LINK_TEXT</walkthrough-menu-navigation>
 
 ## 5. Deploy the application
 
@@ -104,9 +95,14 @@ terraform -chdir=$DIR apply -var='project=<walkthrough-project-id/>'
 
 ## Summary
 
+The application will start populating FHIR Store.  Notifications are sent to
+the Pub/Sub topic and data mirrored on the BigQuery dataset.
+
 The following are where you can find resources you just deployed:
 
-- https://console.cloud.google.com/cloudpubsub/topic/list?project=<walkthrough-project-id/>
-- https://console.cloud.google.com/cloudpubsub/subscription/list?project=<walkthrough-project-id/>
-- https://console.cloud.google.com/healthcare/browser?project=<walkthrough-project-id/>
-- https://console.cloud.google.com/appengine/instances?project=<walkthrough-project-id/>
+- [Pub/Sub Topic](https://console.cloud.google.com/cloudpubsub/topic/list?project=<walkthrough-project-id/>)
+- [Pub/Sub Subscription](https://console.cloud.google.com/cloudpubsub/subscription/list?project=<walkthrough-project-id/>)
+- [BigQuery dataset](https://console.cloud.google.com/bigquery?project=<walkthrough-project-id/>)
+- [FHIR Store](https://console.cloud.google.com/healthcare/browser?project=<walkthrough-project-id/>)
+- [Docker image](https://console.cloud.google.com/artifacts?project=<walkthrough-project-id/>)
+- [Appengine Instance](https://console.cloud.google.com/appengine/instances?project=<walkthrough-project-id/>)
