@@ -82,3 +82,12 @@ DIR=infrastructure/05.deploy
 terraform -chdir=$DIR init
 terraform apply -chdir=$DIR -var='project=<walkthrough-project-id/>'
 ```
+
+## Summary
+
+The following are where you can find resources you just deployed:
+
+- https://console.cloud.google.com/cloudpubsub/topic/list?project=<walkthrough-project-id/>
+- https://console.cloud.google.com/cloudpubsub/subscription/list?project=<walkthrough-project-id/>
+- https://console.cloud.google.com/healthcare/browser?project=<walkthrough-project-id/>
+- https://console.cloud.google.com/appengine/instances?project=<walkthrough-project-id/>
