@@ -28,57 +28,57 @@ Select or create a project to begin.
 gcloud config set project <walkthrough-project-id/>
 ```
 
-## Setup environment
+## 1. Setup environment
 
 Run the terraform workflow in
 the [infrastructure/01.setup](infrastructure/01.setup) directory.
 
 ```sh
-cd infrastructure/01.setup
-terraform init
-terraform apply -var='project=<walkthrough-project-id/>'
+DIR=infrastructure/01.setup
+terraform -chdir=$DIR init
+terraform apply -chdir=$DIR -var='project=<walkthrough-project-id/>'
 ```
 
-## Provision network
+## 2. Provision network
 
 Run the terraform workflow in
 the [infrastructure/02.network](infrastructure/02.network) directory.
 
 ```sh
-cd ../infrastructure/02.network
-terraform init
-terraform apply -var='project=<walkthrough-project-id/>'
+DIR=infrastructure/02.network
+terraform -chdir=$DIR init
+terraform apply -chdir=$DIR -var='project=<walkthrough-project-id/>'
 ```
 
-## Provision FHIR Store and related resources
+## 3. Provision FHIR Store and related resources
 
 Run the terraform workflow in
 the [infrastructure/03.sinks](infrastructure/03.sinks) directory.
 
 ```sh
-cd ../infrastructure/03.sinks
-terraform init
-terraform apply -var='project=<walkthrough-project-id/>'
+DIR=infrastructure/03.sinks
+terraform -chdir=$DIR init
+terraform apply -chdir=$DIR -var='project=<walkthrough-project-id/>'
 ```
 
-## Build the Docker image
+## 4. Build the Docker image
 
 Run the terraform workflow in
 the [infrastructure/04.build](infrastructure/04.build) directory.
 
 ```sh
-cd ../infrastructure/04.build
-terraform init
-terraform apply -var='project=<walkthrough-project-id/>'
+DIR=infrastructure/04.build
+terraform -chdir=$DIR init
+terraform apply -chdir=$DIR -var='project=<walkthrough-project-id/>'
 ```
 
-## Deploy the application
+## 5. Deploy the application
 
 Run the terraform workflow in
 the [infrastructure/05.deploy](infrastructure/05.deploy) directory.
 
 ```sh
-cd ../infrastructure/05.deploy
-terraform init
-terraform apply -var='project=<walkthrough-project-id/>'
+DIR=infrastructure/05.deploy
+terraform -chdir=$DIR init
+terraform apply -chdir=$DIR -var='project=<walkthrough-project-id/>'
 ```
