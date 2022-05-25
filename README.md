@@ -28,6 +28,10 @@ This repository makes use of the
 [synthea](https://github.com/synthetichealth/synthea) project to generate the
 fake data.
 
+# Easy Deploy 🏖️
+
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://shell.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fgoogle-health%2Fpatient-population-simulator&cloudshell_git_branch=01-open-cloud-shell&cloudshell_tutorial=cloud_shell_tutorial.md)
+
 # Requirements
 
 *NOTE: installing gradle is not required*
