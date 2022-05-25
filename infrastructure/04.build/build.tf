@@ -13,7 +13,7 @@
 # limitations under the License.
 
 // Provision a Cloud Build trigger to build the Dataflow Custom template
-resource "google_cloudbuild_trigger" "dataflow_template_build_trigger" {
+resource "google_cloudbuild_trigger" "default" {
   name = "simulator"
   source_to_build {
     uri       = "https://github.com/${var.github_repository_owner}/${var.github_repository_name}"

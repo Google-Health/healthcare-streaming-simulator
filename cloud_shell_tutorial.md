@@ -33,6 +33,9 @@ gcloud config set project <walkthrough-project-id/>
 Run the terraform workflow in
 the [infrastructure/01.setup](infrastructure/01.setup) directory.
 
+It will ask your permission before provisioning resources and you'll need to
+type `yes` to proceed.
+
 ```sh
 DIR=infrastructure/01.setup
 terraform -chdir=$DIR init
@@ -44,6 +47,9 @@ terraform -chdir=$DIR apply -var='project=<walkthrough-project-id/>'
 Run the terraform workflow in
 the [infrastructure/02.network](infrastructure/02.network) directory.
 
+It will ask your permission before provisioning resources and you'll need to
+type `yes` to proceed.
+
 ```sh
 DIR=infrastructure/02.network
 terraform -chdir=$DIR init
@@ -51,6 +57,9 @@ terraform -chdir=$DIR apply -var='project=<walkthrough-project-id/>'
 ```
 
 ## 3. Provision FHIR Store and related resources
+
+It will ask your permission before provisioning resources and you'll need to
+type `yes` to proceed.
 
 Run the terraform workflow in
 the [infrastructure/03.sinks](infrastructure/03.sinks) directory.
@@ -66,16 +75,26 @@ terraform -chdir=$DIR apply -var='project=<walkthrough-project-id/>'
 Run the terraform workflow in
 the [infrastructure/04.build](infrastructure/04.build) directory.
 
+It will ask your permission before provisioning resources and you'll need to
+type `yes` to proceed.
+
 ```sh
 DIR=infrastructure/04.build
 terraform -chdir=$DIR init
 terraform -chdir=$DIR apply -var='project=<walkthrough-project-id/>'
 ```
 
+After successfully running, navigate to Cloud Builds and run the manual trigger.
+
+<walkthrough-menu-navigation sectionId="CLOUD_BUILD_SECTION">LINK_TEXT</walkthrough-menu-navigation>
+
 ## 5. Deploy the application
 
 Run the terraform workflow in
 the [infrastructure/05.deploy](infrastructure/05.deploy) directory.
+
+It will ask your permission before provisioning resources and you'll need to
+type `yes` to proceed.
 
 ```sh
 DIR=infrastructure/05.deploy
